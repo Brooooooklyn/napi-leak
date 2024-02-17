@@ -10,5 +10,11 @@ crate-type = ["cdylib"]
 napi = { path = "../../github/napi-rs/crates/napi", default-features = false, features = ["napi9", "async", "tokio_rt"] }
 napi-derive = { path = "../../github/napi-rs/crates/macro", default-features = false, features = ["strict", "type-def"] }
 
+[target.'cfg(all(not(target_os = "linux"), not(target_family = "wasm")))'.dependencies]
+mimalloc = { version = "0.1" }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+mimalloc = { version = "0.1", features = ["local_dynamic_tls"] }
+
 [build-dependencies]
 napi-build = "2.1.0"

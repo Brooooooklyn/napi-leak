@@ -11,14 +11,28 @@ gc();
 const initialMemoryUsage = process.memoryUsage()
 
 let i = 0;
-while(true) {
+
+function exec() {
   const a = new A();
   a.newB();
-  // if (i % 1000000 === 0) {
+}
+
+while(true) {
+  exec()
+  if (i % 1024000 === 0) {
     await setTimeout(1000);
     gc();
     displayMemoryUsageFromNode(initialMemoryUsage)
-  // }
-  await setTimeout(1000000)
+  }
+  
+  // await setTimeout(1000000)
   i++;
+  if (i % (1024000 * 5) === 0) {
+    break;
+  }
 }
+
+setInterval(() => {
+  gc();
+  displayMemoryUsageFromNode(initialMemoryUsage)
+}, 5000)

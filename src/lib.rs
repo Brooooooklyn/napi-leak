@@ -6,6 +6,10 @@ use napi::{
 #[macro_use]
 extern crate napi_derive;
 
+#[cfg(not(target_family = "wasm"))]
+#[global_allocator]
+static ALLOC: mimalloc::MiMalloc = mimalloc::MiMalloc;
+
 #[napi(constructor)]
 pub struct A;
 
