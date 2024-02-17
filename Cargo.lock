@@ -127,8 +127,6 @@ dependencies = [
 [[package]]
 name = "napi"
 version = "2.15.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "43792514b0c95c5beec42996da0c1b39265b02b75c97baa82d163d3ef55cbfa7"
 dependencies = [
  "bitflags",
  "ctor",
@@ -147,8 +145,6 @@ checksum = "d4b4532cf86bfef556348ac65e561e3123879f0e7566cca6d43a6ff5326f13df"
 [[package]]
 name = "napi-derive"
 version = "2.15.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8d56bb899c164ab1be5e542ae7db8b26750c864bf2eef07295f17754e6358777"
 dependencies = [
  "cfg-if",
  "convert_case",
@@ -161,8 +157,6 @@ dependencies = [
 [[package]]
 name = "napi-derive-backend"
 version = "1.0.60"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6cf2d74ac66fd1cccb646be75fdd1c1dce8acfe20a68f61566a31da0d3eb9786"
 dependencies = [
  "convert_case",
  "once_cell",
@@ -185,8 +179,6 @@ dependencies = [
 [[package]]
 name = "napi-sys"
 version = "2.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2503fa6af34dc83fb74888df8b22afe933b58d37daf7d80424b1c60c68196b8b"
 dependencies = [
  "libloading",
 ]

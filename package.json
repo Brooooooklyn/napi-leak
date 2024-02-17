@@ -1,12 +1,16 @@
 {
   "name": "napi-leak",
-  "packageManager": "yarn@3.3.1",
+  "packageManager": "yarn@4.1.0",
+  "type": "module",
   "dependencies": {
-    "@napi-rs/cli": "^2.18.0"
+    "@napi-rs/cli": "^2.18.0",
+    "colorette": "^2.0.20",
+    "pretty-bytes": "^6.1.1",
+    "table": "^6.8.1"
   },
   "scripts": {
     "build": "napi build",
     "build-release": "napi build --release",
-    "run-leak": "node --expose_gc run_leak.js"
+    "run-leak": "node --max-old-space-size=256 --expose_gc run_leak.js"
   }
 }

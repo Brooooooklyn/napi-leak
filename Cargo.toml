@@ -7,8 +7,8 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-napi = { version = "2.15.1", default-features = false, features = ["napi9", "async", "tokio_rt"] }
-napi-derive = { version = "2.15.1", default-features = false, features = ["strict", "type-def"] }
+napi = { path = "../../github/napi-rs/crates/napi", default-features = false, features = ["napi9", "async", "tokio_rt"] }
+napi-derive = { path = "../../github/napi-rs/crates/macro", default-features = false, features = ["strict", "type-def"] }
 
 [build-dependencies]
 napi-build = "2.1.0"
